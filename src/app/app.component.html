@@ -1,3 +1,10 @@
 <h1>
-  {{title}}
+  <input [(ngModel)]="newItem" placeholder="put a new item in here"> 
+  <button (click) = "addToItems()"> Add something else to the list </button>
+  <ul>
+  <div class="fruitDiv" *ngFor="let f of fruits">  
+    <fruit-item [fruit]="f"></fruit-item>
+  </div>
+  </ul>
+  
 </h1>
