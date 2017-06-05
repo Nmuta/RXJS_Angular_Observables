@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app works!';
+  title = 'Fruit Service';
   fruits: any[]; 
   newItem:string = ""; 
 
@@ -20,12 +20,20 @@ export class AppComponent implements OnInit {
 
 
   addToItems (){
-    this.fruits.push({name: this.newItem, price: 0.2}); 
+     this.fruits.push({name: this.newItem, price: 0.2}); 
+  }
+
+  localGetFruits(){
+    this._fruitservice.getFruitsObservable().subscribe(payload => this.fruits = payload) ; 
+  }
+
+    localGetFruitsPromise(){
+    this._fruitservice.getFruitsPromise().then(payload => this.fruits= payload); 
   }
 
   ngOnInit():void {
-    this.fruits = this._fruitservice.getFruits(); 
-       
+       this.localGetFruitsPromise(); 
+    
   }
  
 }
