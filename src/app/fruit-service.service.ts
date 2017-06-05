@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http'; 
 // const URLLY = './fruits.json'; 
 // const URLLY = 'https://jsonplaceholder.typicode.com/posts'; 
-const URLLY = 'http://localhost:4200/assets/fruits.json'; 
+const URLLY = './assets/fruits.json'; 
 
 import 'rxjs'; 
 
